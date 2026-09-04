@@ -19,6 +19,15 @@
  */
 
 @theme inline {
+  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --color-rosegold: var(--rosegold);
+  --color-rosegold-soft: var(--rosegold-soft);
+  --color-blush: var(--blush);
+  --color-ivory: var(--ivory);
+  --color-wine: var(--wine);
+  --color-wine-foreground: var(--wine-foreground);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
