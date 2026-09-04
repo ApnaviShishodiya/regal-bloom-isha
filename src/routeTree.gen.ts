@@ -10,33 +10,44 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RegalBloomDiamondPendantIshaRouteImport } from './routes/regal-bloom-diamond-pendant-isha'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RegalBloomDiamondPendantIshaRoute =
+  RegalBloomDiamondPendantIshaRouteImport.update({
+    id: '/regal-bloom-diamond-pendant-isha',
+    path: '/regal-bloom-diamond-pendant-isha',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/regal-bloom-diamond-pendant-isha': typeof RegalBloomDiamondPendantIshaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/regal-bloom-diamond-pendant-isha': typeof RegalBloomDiamondPendantIshaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/regal-bloom-diamond-pendant-isha': typeof RegalBloomDiamondPendantIshaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/regal-bloom-diamond-pendant-isha'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/regal-bloom-diamond-pendant-isha'
+  id: '__root__' | '/' | '/regal-bloom-diamond-pendant-isha'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  RegalBloomDiamondPendantIshaRoute: typeof RegalBloomDiamondPendantIshaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +59,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/regal-bloom-diamond-pendant-isha': {
+      id: '/regal-bloom-diamond-pendant-isha'
+      path: '/regal-bloom-diamond-pendant-isha'
+      fullPath: '/regal-bloom-diamond-pendant-isha'
+      preLoaderRoute: typeof RegalBloomDiamondPendantIshaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  RegalBloomDiamondPendantIshaRoute: RegalBloomDiamondPendantIshaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
