@@ -15,14 +15,13 @@ export function ProductGallery({ images }: { images: GalleryImage[] }) {
 
   const go = useCallback(
     (next: number, byUser = true) => {
-      setIndex((current) => {
-        const total = images.length;
-        return ((next % total) + total) % total;
-      });
+      const total = images.length;
+      setIndex(((next % total) + total) % total);
       if (byUser) setManual(true);
     },
     [images.length],
   );
+
 
   // Autoplay until the visitor interacts with a thumbnail or arrow.
   useEffect(() => {
