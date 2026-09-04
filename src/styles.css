@@ -167,5 +167,48 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  blockquote {
+    font-family: var(--font-display);
+    font-weight: 400;
   }
 }
+
+@utility text-gradient-rosegold {
+  background: var(--gradient-rosegold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility surface-ivory {
+  background: var(--gradient-ivory);
+}
+
+@utility rule-gold {
+  height: 1px;
+  background: var(--gradient-rosegold);
+}
+
+@utility eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+@utility shadow-editorial {
+  box-shadow: var(--shadow-editorial);
+}
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
