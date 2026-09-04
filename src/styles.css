@@ -19,6 +19,15 @@
  */
 
 @theme inline {
+  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --color-rosegold: var(--rosegold);
+  --color-rosegold-soft: var(--rosegold-soft);
+  --color-blush: var(--blush);
+  --color-ivory: var(--ivory);
+  --color-wine: var(--wine);
+  --color-wine-foreground: var(--wine-foreground);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -62,40 +71,58 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
+  --radius: 0.5rem;
+  --ivory: oklch(0.977 0.012 84);
+  --blush: oklch(0.93 0.028 20);
+  --rosegold: oklch(0.72 0.083 43);
+  --rosegold-soft: oklch(0.86 0.045 45);
+  --wine: oklch(0.32 0.104 12);
+  --wine-foreground: oklch(0.97 0.012 60);
+
+  --background: var(--ivory);
+  --foreground: oklch(0.28 0.052 18);
+  --card: oklch(0.995 0.006 80);
+  --card-foreground: oklch(0.28 0.052 18);
+  --popover: oklch(0.995 0.006 80);
+  --popover-foreground: oklch(0.28 0.052 18);
+  --primary: var(--wine);
+  --primary-foreground: var(--wine-foreground);
+  --secondary: oklch(0.955 0.019 40);
+  --secondary-foreground: var(--wine);
+  --muted: oklch(0.952 0.014 60);
+  --muted-foreground: oklch(0.5 0.035 25);
+  --accent: var(--blush);
+  --accent-foreground: var(--wine);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.98 0.005 60);
+  --border: oklch(0.9 0.021 45);
+  --input: oklch(0.9 0.021 45);
+  --ring: var(--rosegold);
+  --chart-1: var(--rosegold);
+  --chart-2: var(--wine);
+  --chart-3: var(--blush);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --sidebar: var(--ivory);
+  --sidebar-foreground: oklch(0.28 0.052 18);
+  --sidebar-primary: var(--wine);
+  --sidebar-primary-foreground: var(--wine-foreground);
+  --sidebar-accent: var(--blush);
+  --sidebar-accent-foreground: var(--wine);
+  --sidebar-border: oklch(0.9 0.021 45);
+  --sidebar-ring: var(--rosegold);
+
+  --gradient-rosegold: linear-gradient(
+    135deg,
+    oklch(0.86 0.045 45),
+    oklch(0.72 0.083 43) 45%,
+    oklch(0.55 0.09 25)
+  );
+  --gradient-ivory: linear-gradient(180deg, oklch(0.99 0.008 80), oklch(0.955 0.022 30));
+  --shadow-editorial: 0 24px 60px -28px oklch(0.32 0.104 12 / 0.35);
+  --shadow-soft: 0 10px 30px -18px oklch(0.32 0.104 12 / 0.4);
 }
+
 
 .dark {
   --background: oklch(0.129 0.042 264.695);
@@ -140,5 +167,48 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  blockquote {
+    font-family: var(--font-display);
+    font-weight: 400;
   }
 }
+
+@utility text-gradient-rosegold {
+  background: var(--gradient-rosegold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility surface-ivory {
+  background: var(--gradient-ivory);
+}
+
+@utility rule-gold {
+  height: 1px;
+  background: var(--gradient-rosegold);
+}
+
+@utility eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+@utility shadow-editorial {
+  box-shadow: var(--shadow-editorial);
+}
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
