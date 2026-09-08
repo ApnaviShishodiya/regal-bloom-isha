@@ -4,10 +4,12 @@ import { BadgeCheck, IndianRupee, Repeat, Sparkles } from "lucide-react";
 import { ProductGallery, type GalleryImage } from "@/components/ProductGallery";
 import { GoldTracker } from "@/components/GoldTracker";
 import { Button } from "@/components/ui/button";
-import indriyaLogo from "@/assets/indriya-logo.png";
 
-const COLLECTION_URL = "https://www.indriya.com/shop/pendants";
-const STORE_URL = "https://www.indriya.com/store-locator";
+const COLLECTION_URL = "https://www.indriya.com/jewellery/pendants";
+const DIAMOND_PENDANTS_URL = "https://www.indriya.com/jewellery/diamond-pendants";
+const ROSE_GOLD_URL = "https://www.indriya.com/jewellery/rose-gold-jewellery";
+const STORE_URL = "https://www.indriya.com/jewellery-stores";
+const GOLD_RATE_URL = "https://www.indriya.com/gold-rate-today";
 
 const TITLE = "Regal Bloom Diamond Pendant in Rose Gold | Indriya";
 const DESCRIPTION =
@@ -83,7 +85,7 @@ export const Route = createFileRoute("/regal-bloom-diamond-pendant-isha")({
               "@type": "ListItem",
               position: 2,
               name: "Diamond Pendants",
-              item: COLLECTION_URL,
+              item: DIAMOND_PENDANTS_URL,
             },
             { "@type": "ListItem", position: 3, name: "Regal Bloom Diamond Pendant", item: CANONICAL },
           ],
@@ -124,14 +126,23 @@ function ProductPage() {
     <main className="min-h-screen bg-background">
       <header className="border-b border-border/70 bg-card/60 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-          <a href="/" aria-label="Indriya home" className="inline-flex items-center">
-            <img
-              src={indriyaLogo}
-              alt="Indriya fine jewellery logo"
-              width={1152}
-              height={576}
-              className="h-9 w-auto sm:h-11"
-            />
+          <a href="/" aria-label="Indriya home" className="inline-flex flex-col items-start">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 120 120"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-8 w-auto sm:h-10"
+              aria-hidden
+            >
+              <text x="10" y="70" fontSize="60" fontWeight="bold" fill="#8B4C5C">
+                I
+              </text>
+            </svg>
+            <span className="text-[8px] font-semibold uppercase tracking-wider text-rosegold">
+              100% Certified
+            </span>
           </a>
           <span className="eyebrow hidden sm:block">Fine diamond jewellery</span>
         </div>
@@ -170,7 +181,7 @@ function ProductPage() {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Button size="lg" className="rounded-full px-8 tracking-wide" asChild>
-              <a href={COLLECTION_URL} target="_blank" rel="noopener noreferrer">
+              <a href={DIAMOND_PENDANTS_URL} target="_blank" rel="noopener noreferrer">
                 Explore the collection
               </a>
             </Button>
@@ -215,7 +226,7 @@ function ProductPage() {
         <div className="rule-gold my-7 w-20" />
         <div className="space-y-5 text-[15px] leading-[1.8] text-muted-foreground">
           <p>
-            The Regal Bloom is a Diamond Pendant built around one simple idea: a piece of fine
+            The Regal Bloom is a diamond pendant built around one simple idea: a piece of fine
             jewellery should feel as natural at 10 in the morning as it does at 8 in the evening.
             Its petals are carved in 18 karat pink gold and pavé-set with SI–FG natural diamonds, so
             the design reads as a soft flower from a distance and as precise, hand-finished
@@ -223,9 +234,9 @@ function ProductPage() {
             never asks to be managed through a working day.
           </p>
           <p>
-            If you have been searching for a Diamond pendant gold design that is neither too
-            traditional nor too trend-driven, this is the middle path. The warm blush tone of a rose
-            gold diamond pendant flatters Indian skin tones beautifully, and pink gold is a harder
+            If you have been searching for a diamond pendant gold design that is neither too
+            traditional nor too trend-driven, this is the middle path. The warm blush tone of rose
+            gold jewellery flatters Indian skin tones beautifully, and pink gold is a harder
             alloy than yellow gold — which means the setting holds its shape and its stones for
             years. It layers effortlessly over a cotton kurta, a linen shirt, or a silk saree
             blouse, and looks considered with all three.
@@ -247,7 +258,7 @@ function ProductPage() {
             and our Gold Tracker keeps that reference visible while you decide.
           </p>
           <p>
-            Explore it alongside our broader edit of Rose gold jewellery designs — matching studs,
+            Explore it alongside our broader edit of rose gold jewellery designs — matching studs,
             slim bangles and stackable rings — or book an appointment at your nearest boutique to
             try the Regal Bloom on before you commit. SKU DEARA40-APPL070, ready to be styled your
             way.
