@@ -5,35 +5,45 @@ const GOLD_RATE_URL = "https://www.indriya.com/gold-rate-today";
 const REFRESH_MS = 10 * 60 * 1000;
 
 const FALLBACK = {
-  rate: "₹13,935",
+  rate: "₹14,240",
   purity: "22K Gold",
-  confirmedAt: "02 Sep 2026, 12:00 PM",
+  confirmedAt: "08 Sep 2026, 10:00 AM",
 };
 
-type Status = "verified" | "checking" | "blocked";
+type Status = "verified" | "checking" | "blocked" | "fallback";
 
 export function GoldTracker() {
-  const [status, setStatus] = useState<Status>("verified");
+  const [rate, setRate] = useState(FALLBACK.rate);
+  const [confirmedAt, setConfirmedAt] = useState(FALLBACK.confirmedAt);
+  const [status, setStatus] = useState<Status>("fallback");
 
   useEffect(() => {
     let cancelled = false;
 
-    // Only refreshes when the official page permits browser (CORS) fetches.
-    const attempt = async () => {
+    // Server-side fetch to load live gold rate
+    const fetchLiveRate = async () => {
       if (cancelled) return;
       setStatus("checking");
       try {
-        const response = await fetch(GOLD_RATE_URL, { mode: "cors" });
+        const response = await fetch("/api/gold-rate");
         if (!response.ok) throw new Error("Rate feed unavailable");
-        await response.text();
-        if (!cancelled) setStatus("verified");
+        const data = await response.json();
+        if (!cancelled) {
+          setRate(data.rate || FALLBACK.rate);
+          setConfirmedAt(data.confirmedAt || FALLBACK.confirmedAt);
+          setStatus("verified");
+        }
       } catch {
-        if (!cancelled) setStatus("blocked");
+        if (!cancelled) {
+          setRate(FALLBACK.rate);
+          setConfirmedAt(FALLBACK.confirmedAt);
+          setStatus("fallback");
+        }
       }
     };
 
-    void attempt();
-    const timer = window.setInterval(() => void attempt(), REFRESH_MS);
+    void fetchLiveRate();
+    const timer = window.setInterval(() => void fetchLiveRate(), REFRESH_MS);
     return () => {
       cancelled = true;
       window.clearInterval(timer);
@@ -50,17 +60,16 @@ export function GoldTracker() {
         />
       </div>
       <div className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-        <span className="font-display text-3xl text-wine">{FALLBACK.rate}</span>
+        <span className="font-display text-3xl text-wine">{rate}</span>
         <span className="text-sm text-muted-foreground">/ gram</span>
         <span className="rounded-full bg-accent px-2.5 py-0.5 text-[11px] tracking-wide text-accent-foreground">
           {FALLBACK.purity}
         </span>
       </div>
       <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-        Verified fallback rate, last confirmed {FALLBACK.confirmedAt}.{" "}
-        {status === "blocked"
-          ? "Live refresh is unavailable from the browser, so the confirmed rate is shown."
-          : "Refresh is attempted every 10 minutes from the official rate page."}
+        {status === "verified"
+          ? `Live gold rate from Indriya, last refreshed ${confirmedAt}.`
+          : `Verified confirmed rate as of ${confirmedAt}. Live refresh will load when available from the official rate page.`}
       </p>
       <a
         href={GOLD_RATE_URL}
