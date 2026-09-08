@@ -4,6 +4,10 @@ import { BadgeCheck, IndianRupee, Repeat, Sparkles } from "lucide-react";
 import { ProductGallery, type GalleryImage } from "@/components/ProductGallery";
 import { GoldTracker } from "@/components/GoldTracker";
 import { Button } from "@/components/ui/button";
+import indriyaLogo from "@/assets/indriya-logo.png";
+
+const COLLECTION_URL = "https://www.indriya.com/shop/pendants";
+const STORE_URL = "https://www.indriya.com/store-locator";
 
 const TITLE = "Regal Bloom Diamond Pendant in Rose Gold | Indriya";
 const DESCRIPTION =
