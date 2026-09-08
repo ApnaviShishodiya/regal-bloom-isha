@@ -72,6 +72,23 @@ export const Route = createFileRoute("/regal-bloom-diamond-pendant-isha")({
           },
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Diamond Pendants",
+              item: COLLECTION_URL,
+            },
+            { "@type": "ListItem", position: 3, name: "Regal Bloom Diamond Pendant", item: CANONICAL },
+          ],
+        }),
+      },
     ],
   }),
   component: ProductPage,
