@@ -124,7 +124,15 @@ function ProductPage() {
     <main className="min-h-screen bg-background">
       <header className="border-b border-border/70 bg-card/60 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-          <span className="font-display text-xl tracking-[0.28em] text-wine">INDRIYA</span>
+          <a href="/" aria-label="Indriya home" className="inline-flex items-center">
+            <img
+              src={indriyaLogo}
+              alt="Indriya fine jewellery logo"
+              width={1152}
+              height={576}
+              className="h-9 w-auto sm:h-11"
+            />
+          </a>
           <span className="eyebrow hidden sm:block">Fine diamond jewellery</span>
         </div>
       </header>
