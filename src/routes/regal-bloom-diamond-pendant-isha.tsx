@@ -48,6 +48,7 @@ export const Route = createFileRoute("/regal-bloom-diamond-pendant-isha")({
       { property: "og:image", content: HERO_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: HERO_IMAGE },
+      { name: "robots", content: "index, follow" },
     ],
     links: [{ rel: "canonical", href: CANONICAL }],
     scripts: [
