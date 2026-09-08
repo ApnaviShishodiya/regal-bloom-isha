@@ -4,6 +4,10 @@ import { BadgeCheck, IndianRupee, Repeat, Sparkles } from "lucide-react";
 import { ProductGallery, type GalleryImage } from "@/components/ProductGallery";
 import { GoldTracker } from "@/components/GoldTracker";
 import { Button } from "@/components/ui/button";
+import indriyaLogo from "@/assets/indriya-logo.png";
+
+const COLLECTION_URL = "https://www.indriya.com/shop/pendants";
+const STORE_URL = "https://www.indriya.com/store-locator";
 
 const TITLE = "Regal Bloom Diamond Pendant in Rose Gold | Indriya";
 const DESCRIPTION =
@@ -44,6 +48,7 @@ export const Route = createFileRoute("/regal-bloom-diamond-pendant-isha")({
       { property: "og:image", content: HERO_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: HERO_IMAGE },
+      { name: "robots", content: "index, follow" },
     ],
     links: [{ rel: "canonical", href: CANONICAL }],
     scripts: [
@@ -65,6 +70,23 @@ export const Route = createFileRoute("/regal-bloom-diamond-pendant-isha")({
             priceCurrency: "INR",
             availability: "https://schema.org/InStock",
           },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Diamond Pendants",
+              item: COLLECTION_URL,
+            },
+            { "@type": "ListItem", position: 3, name: "Regal Bloom Diamond Pendant", item: CANONICAL },
+          ],
         }),
       },
     ],
@@ -102,7 +124,15 @@ function ProductPage() {
     <main className="min-h-screen bg-background">
       <header className="border-b border-border/70 bg-card/60 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-          <span className="font-display text-xl tracking-[0.28em] text-wine">INDRIYA</span>
+          <a href="/" aria-label="Indriya home" className="inline-flex items-center">
+            <img
+              src={indriyaLogo}
+              alt="Indriya fine jewellery logo"
+              width={1152}
+              height={576}
+              className="h-9 w-auto sm:h-11"
+            />
+          </a>
           <span className="eyebrow hidden sm:block">Fine diamond jewellery</span>
         </div>
       </header>
@@ -139,15 +169,20 @@ function ProductPage() {
           </dl>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button size="lg" className="rounded-full px-8 tracking-wide">
-              Explore the collection
+            <Button size="lg" className="rounded-full px-8 tracking-wide" asChild>
+              <a href={COLLECTION_URL} target="_blank" rel="noopener noreferrer">
+                Explore the collection
+              </a>
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="rounded-full border-rosegold px-8 tracking-wide text-wine hover:bg-accent"
+              asChild
             >
-              Find a store
+              <a href={STORE_URL} target="_blank" rel="noopener noreferrer">
+                Find a store
+              </a>
             </Button>
           </div>
 
@@ -235,15 +270,21 @@ function ProductPage() {
             <Button
               size="lg"
               className="rounded-full bg-[image:var(--gradient-rosegold)] px-8 text-wine-foreground hover:opacity-90"
+              asChild
             >
-              Explore the collection
+              <a href={COLLECTION_URL} target="_blank" rel="noopener noreferrer">
+                Explore the collection
+              </a>
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="rounded-full border-rosegold-soft/60 bg-transparent px-8 text-wine-foreground hover:bg-wine-foreground/10 hover:text-wine-foreground"
+              asChild
             >
-              Find a store
+              <a href={STORE_URL} target="_blank" rel="noopener noreferrer">
+                Find a store
+              </a>
             </Button>
           </div>
         </div>
