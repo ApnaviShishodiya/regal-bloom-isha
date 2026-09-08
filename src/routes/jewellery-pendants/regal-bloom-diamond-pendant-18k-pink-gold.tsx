@@ -4,13 +4,13 @@ import { BadgeCheck, IndianRupee, Repeat, Sparkles } from "lucide-react";
 import { ProductGallery, type GalleryImage } from "@/components/ProductGallery";
 import { GoldTracker } from "@/components/GoldTracker";
 import { Button } from "@/components/ui/button";
+import indriyaLogo from "@/assets/indriya-logo.png";
 
 const COLLECTION_URL = "https://www.indriya.com/jewellery/pendants";
 const DIAMOND_PENDANTS_URL = "https://www.indriya.com/jewellery/diamond-pendants";
 const ROSE_GOLD_URL = "https://www.indriya.com/jewellery/rose-gold-jewellery";
 const STORE_URL = "https://www.indriya.com/jewellery-stores";
 const GOLD_RATE_URL = "https://www.indriya.com/gold-rate-today";
-const INDRIYA_LOGO = "https://www.indriya.com/assets/logo.png";
 
 // SEO Configuration
 const PRIMARY_KEYWORD = "18k pink gold diamond pendant";
@@ -141,11 +141,12 @@ function ProductPage() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
           <a href="/" aria-label="Indriya home" className="inline-flex items-center">
             <img
-              src={INDRIYA_LOGO}
+              src={indriyaLogo}
               alt="Indriya fine jewellery logo"
               width="120"
               height="60"
               className="h-8 w-auto sm:h-10"
+              loading="eager"
             />
           </a>
           <span className="eyebrow hidden sm:block">Fine diamond jewellery</span>
