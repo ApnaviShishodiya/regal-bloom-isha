@@ -169,15 +169,20 @@ function ProductPage() {
           </dl>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button size="lg" className="rounded-full px-8 tracking-wide">
-              Explore the collection
+            <Button size="lg" className="rounded-full px-8 tracking-wide" asChild>
+              <a href={COLLECTION_URL} target="_blank" rel="noopener noreferrer">
+                Explore the collection
+              </a>
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="rounded-full border-rosegold px-8 tracking-wide text-wine hover:bg-accent"
+              asChild
             >
-              Find a store
+              <a href={STORE_URL} target="_blank" rel="noopener noreferrer">
+                Find a store
+              </a>
             </Button>
           </div>
 
