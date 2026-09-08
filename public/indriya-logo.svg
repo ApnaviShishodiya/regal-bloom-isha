@@ -1,1 +1,28 @@
-data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDIwMCAxMDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHN0eWxlPgogIC5sb2dvLXRleHQge2ZvbnQtZmFtaWx5OiBBcmlhbDsgZm9udC1zaXplOiAyMnB4OyBmb250LXdlaWdodDogNjAwOyBjb2xvcjogIzAxMzk2Njt9CiAgLmxvZ28taWNvbiB7IGZpbGw6ICMwMTM5NjY7IH0KPC9zdHlsZT4KPGHN2ZnV4QgcGF0aCBkPSJNIDI1IDUwIEwgMTUgMzAgTCAyNSAxMCBMIDM1IDMwIFogTSAyNSA1MCBMIDM1IDcwIEwgMjUgOTAgTCAxNSA3MCBaIiBjbGFzcz0ibG9nby1pY29uIi8+Cjx0ZXh0IHg9IjUwIiB5PSI2MCIgY2xhc3M9ImxvZ28tdGV4dCI+SU5EUklZQTwvdGV4dD4KPC9zdmc+
+<svg width="200" height="100" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Indriya logo - antelope symbol -->
+  <g id="antelope">
+    <!-- Head -->
+    <circle cx="25" cy="35" r="8" fill="#013966"/>
+    <!-- Body -->
+    <ellipse cx="25" cy="55" rx="6" ry="12" fill="#013966"/>
+    <!-- Front left leg -->
+    <rect x="20" y="65" width="2.5" height="20" fill="#013966"/>
+    <!-- Front right leg -->
+    <rect x="27.5" y="65" width="2.5" height="20" fill="#013966"/>
+    <!-- Back left leg -->
+    <rect x="18" y="65" width="2.5" height="20" fill="#013966"/>
+    <!-- Back right leg -->
+    <rect x="29" y="65" width="2.5" height="20" fill="#013966"/>
+    <!-- Left horn -->
+    <line x1="20" y1="28" x2="15" y2="12" stroke="#013966" stroke-width="2" stroke-linecap="round"/>
+    <!-- Right horn -->
+    <line x1="30" y1="28" x2="35" y2="12" stroke="#013966" stroke-width="2" stroke-linecap="round"/>
+    <!-- Tail -->
+    <path d="M 22 65 Q 15 70 12 80" stroke="#013966" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="50" y="60" font-family="Georgia, serif" font-size="36" font-weight="600" fill="#013966" letter-spacing="2">
+    INDRIYA
+  </text>
+</svg>
