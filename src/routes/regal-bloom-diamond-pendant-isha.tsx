@@ -270,15 +270,21 @@ function ProductPage() {
             <Button
               size="lg"
               className="rounded-full bg-[image:var(--gradient-rosegold)] px-8 text-wine-foreground hover:opacity-90"
+              asChild
             >
-              Explore the collection
+              <a href={COLLECTION_URL} target="_blank" rel="noopener noreferrer">
+                Explore the collection
+              </a>
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="rounded-full border-rosegold-soft/60 bg-transparent px-8 text-wine-foreground hover:bg-wine-foreground/10 hover:text-wine-foreground"
+              asChild
             >
-              Find a store
+              <a href={STORE_URL} target="_blank" rel="noopener noreferrer">
+                Find a store
+              </a>
             </Button>
           </div>
         </div>
