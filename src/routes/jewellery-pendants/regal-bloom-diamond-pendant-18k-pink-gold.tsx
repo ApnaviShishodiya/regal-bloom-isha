@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { BadgeCheck, IndianRupee, Repeat, ShieldCheck, Sparkles } from "lucide-react";
 
 import { ProductGallery, type GalleryImage } from "@/components/ProductGallery";
@@ -251,8 +251,29 @@ function ProductPage() {
             carrying the presence expected from a fine Diamond pendant gold piece. Whether you want
             a daily wear diamond pendant or a statement jewel, the Regal Bloom answers both. If you
             are exploring Rose gold jewellery designs, this modern diamond pendant shows how Indian
-            motifs can be expressed through clean, contemporary lines. A graceful 18k gold pendant
-            and a trusted gold pendant choice, it moves effortlessly from work to occasion dressing.
+            motifs can be expressed through clean, contemporary lines. Browse our{" "}
+            <Link
+              to="/jewellery/rose-gold-jewellery"
+              className="text-rosegold underline underline-offset-2 hover:text-wine"
+            >
+              rose gold jewellery collection
+            </Link>{" "}
+            or view the full{" "}
+            <Link
+              to="/jewellery/pendants"
+              className="text-rosegold underline underline-offset-2 hover:text-wine"
+            >
+              pendant collection
+            </Link>
+            . A graceful 18k gold pendant and a trusted gold pendant choice, it moves effortlessly
+            from work to occasion dressing. To experience it in person, visit your nearest{" "}
+            <Link
+              to="/jewellery-stores"
+              className="text-rosegold underline underline-offset-2 hover:text-wine"
+            >
+              Indriya boutique
+            </Link>
+            .
           </p>
         </div>
 
