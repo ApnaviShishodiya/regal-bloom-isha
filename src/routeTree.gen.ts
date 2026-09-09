@@ -11,6 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as RegalBloomDiamondPendantIshaRouteImport } from './routes/regal-bloom-diamond-pendant-isha'
+import { Route as ApiGoldRateRouteImport } from './routes/api/gold-rate'
+import { Route as JewelleryPendantsRegalBloomDiamondPendant18kPinkGoldRouteImport } from './routes/jewellery-pendants/regal-bloom-diamond-pendant-18k-pink-gold'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -23,31 +25,63 @@ const RegalBloomDiamondPendantIshaRoute =
     path: '/regal-bloom-diamond-pendant-isha',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiGoldRateRoute = ApiGoldRateRouteImport.update({
+  id: '/api/gold-rate',
+  path: '/api/gold-rate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JewelleryPendantsRegalBloomDiamondPendant18kPinkGoldRoute =
+  JewelleryPendantsRegalBloomDiamondPendant18kPinkGoldRouteImport.update({
+    id: '/jewellery-pendants/regal-bloom-diamond-pendant-18k-pink-gold',
+    path: '/jewellery-pendants/regal-bloom-diamond-pendant-18k-pink-gold',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/regal-bloom-diamond-pendant-isha': typeof RegalBloomDiamondPendantIshaRoute
+  '/api/gold-rate': typeof ApiGoldRateRoute
+  '/jewellery-pendants/regal-bloom-diamond-pendant-18k-pink-gold': typeof JewelleryPendantsRegalBloomDiamondPendant18kPinkGoldRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/regal-bloom-diamond-pendant-isha': typeof RegalBloomDiamondPendantIshaRoute
+  '/api/gold-rate': typeof ApiGoldRateRoute
+  '/jewellery-pendants/regal-bloom-diamond-pendant-18k-pink-gold': typeof JewelleryPendantsRegalBloomDiamondPendant18kPinkGoldRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/regal-bloom-diamond-pendant-isha': typeof RegalBloomDiamondPendantIshaRoute
+  '/api/gold-rate': typeof ApiGoldRateRoute
+  '/jewellery-pendants/regal-bloom-diamond-pendant-18k-pink-gold': typeof JewelleryPendantsRegalBloomDiamondPendant18kPinkGoldRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/regal-bloom-diamond-pendant-isha'
+  fullPaths:
+    | '/'
+    | '/regal-bloom-diamond-pendant-isha'
+    | '/api/gold-rate'
+    | '/jewellery-pendants/regal-bloom-diamond-pendant-18k-pink-gold'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/regal-bloom-diamond-pendant-isha'
-  id: '__root__' | '/' | '/regal-bloom-diamond-pendant-isha'
+  to:
+    | '/'
+    | '/regal-bloom-diamond-pendant-isha'
+    | '/api/gold-rate'
+    | '/jewellery-pendants/regal-bloom-diamond-pendant-18k-pink-gold'
+  id:
+    | '__root__'
+    | '/'
+    | '/regal-bloom-diamond-pendant-isha'
+    | '/api/gold-rate'
+    | '/jewellery-pendants/regal-bloom-diamond-pendant-18k-pink-gold'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   RegalBloomDiamondPendantIshaRoute: typeof RegalBloomDiamondPendantIshaRoute
+  ApiGoldRateRoute: typeof ApiGoldRateRoute
+  JewelleryPendantsRegalBloomDiamondPendant18kPinkGoldRoute: typeof JewelleryPendantsRegalBloomDiamondPendant18kPinkGoldRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -66,12 +100,29 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RegalBloomDiamondPendantIshaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/gold-rate': {
+      id: '/api/gold-rate'
+      path: '/api/gold-rate'
+      fullPath: '/api/gold-rate'
+      preLoaderRoute: typeof ApiGoldRateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jewellery-pendants/regal-bloom-diamond-pendant-18k-pink-gold': {
+      id: '/jewellery-pendants/regal-bloom-diamond-pendant-18k-pink-gold'
+      path: '/jewellery-pendants/regal-bloom-diamond-pendant-18k-pink-gold'
+      fullPath: '/jewellery-pendants/regal-bloom-diamond-pendant-18k-pink-gold'
+      preLoaderRoute: typeof JewelleryPendantsRegalBloomDiamondPendant18kPinkGoldRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   RegalBloomDiamondPendantIshaRoute: RegalBloomDiamondPendantIshaRoute,
+  ApiGoldRateRoute: ApiGoldRateRoute,
+  JewelleryPendantsRegalBloomDiamondPendant18kPinkGoldRoute:
+    JewelleryPendantsRegalBloomDiamondPendant18kPinkGoldRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
