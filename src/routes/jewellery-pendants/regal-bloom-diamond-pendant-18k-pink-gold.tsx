@@ -244,12 +244,15 @@ function ProductPage() {
         {/* INTRO PARAGRAPH - Keywords in first 100 words */}
         <div className="mb-10">
           <p className="text-[15px] leading-[1.8] text-muted-foreground">
-            The Regal Bloom is a contemporary 18K pink gold diamond pendant designed for those seeking
-            everyday elegance. Crafted with SI–FG natural diamonds and meticulous detail, this
-            pendant marries traditional Indian jewellery aesthetics with modern minimalism. At 6.527 g,
-            it sits light on the collarbone while maintaining the presence and sparkle expected from
-            a fine diamond piece. Whether you're seeking a 18K gold pendant for daily wear or a
-            statement piece for special occasions, the Regal Bloom delivers both grace and durability.
+            The Regal Bloom is a refined Diamond Pendant in 18 karat pink gold, designed for those
+            seeking everyday elegance with lasting value. As a rose gold diamond pendant, it pairs
+            the warmth of pink gold with brilliant SI–FG natural diamonds. Crafted with meticulous
+            detail at 6.527 g, this floral diamond pendant sits lightly on the collarbone while
+            carrying the presence expected from a fine Diamond pendant gold piece. Whether you want
+            a daily wear diamond pendant or a statement jewel, the Regal Bloom answers both. If you
+            are exploring Rose gold jewellery designs, this modern diamond pendant shows how Indian
+            motifs can be expressed through clean, contemporary lines. A graceful 18k gold pendant
+            and a trusted gold pendant choice, it moves effortlessly from work to occasion dressing.
           </p>
         </div>
 
