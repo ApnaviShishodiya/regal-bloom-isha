@@ -1,16 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { BadgeCheck, IndianRupee, Repeat, Sparkles } from "lucide-react";
+import { BadgeCheck, IndianRupee, Repeat, ShieldCheck, Sparkles } from "lucide-react";
 
 import { ProductGallery, type GalleryImage } from "@/components/ProductGallery";
 import { GoldTracker } from "@/components/GoldTracker";
 import { Button } from "@/components/ui/button";
-import indriyaLogo from "@/assets/indriya-logo.png";
 
 const COLLECTION_URL = "https://www.indriya.com/jewellery/pendants";
 const DIAMOND_PENDANTS_URL = "https://www.indriya.com/jewellery/diamond-pendants";
 const ROSE_GOLD_URL = "https://www.indriya.com/jewellery/rose-gold-jewellery";
 const STORE_URL = "https://www.indriya.com/jewellery-stores";
 const GOLD_RATE_URL = "https://www.indriya.com/gold-rate-today";
+const INDRIYA_LOGO_URL =
+  "https://s7ap1.scene7.com/is/content/noveljewelsprod/Indriya-Logo?fmt=webp-alpha&fit=wrap&dpr=off";
 
 // SEO Configuration
 const PRIMARY_KEYWORD = "18k pink gold diamond pendant";
@@ -18,7 +19,7 @@ const META_TITLE = "18K Pink Gold Diamond Pendant | Regal Bloom by Indriya";
 const META_DESCRIPTION =
   "Discover the Regal Bloom, an 18K pink gold diamond pendant with SI–FG natural diamonds. Everyday-elegant design at ₹2,82,758.";
 const URL_SLUG = "/jewellery-pendants/regal-bloom-diamond-pendant-18k-pink-gold";
-const CANONICAL = "https://www.regal-bloom-isha.com/jewellery-pendants/regal-bloom-diamond-pendant-18k-pink-gold";
+const CANONICAL = "https://regal-bloom-isha.lovable.app/jewellery-pendants/regal-bloom-diamond-pendant-18k-pink-gold";
 const HERO_IMAGE =
   "https://s7ap1.scene7.com/is/image/noveljewelsprod/DEARA40-APPL070?fmt=webp&wid=1400";
 
@@ -58,7 +59,11 @@ export const Route = createFileRoute("/jewellery-pendants/regal-bloom-diamond-pe
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: HERO_IMAGE },
       { name: "robots", content: "index, follow" },
-      { name: "keywords", content: "18K pink gold diamond pendant, diamond pendant, rose gold pendant, fine jewellery" },
+      {
+        name: "keywords",
+        content:
+          "Diamond Pendant, Diamond pendant gold, rose gold diamond pendant, floral diamond pendant, modern diamond pendant, daily wear diamond pendant, gold pendant, 18k gold pendant, Rose gold jewellery designs",
+      },
     ],
     links: [{ rel: "canonical", href: CANONICAL }],
     scripts: [
@@ -139,12 +144,12 @@ function ProductPage() {
     <main className="min-h-screen bg-background">
       <header className="border-b border-border/70 bg-card/60 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-          <a href="/" aria-label="Indriya home" className="inline-flex items-center">
+          <a href="https://www.indriya.com/" aria-label="Indriya home" className="inline-flex items-center">
             <img
-              src={indriyaLogo}
+              src={INDRIYA_LOGO_URL}
               alt="Indriya fine jewellery logo"
-              width="120"
-              height="60"
+              width="160"
+              height="80"
               className="h-8 w-auto sm:h-10"
               loading="eager"
             />
@@ -152,6 +157,16 @@ function ProductPage() {
           <span className="eyebrow hidden sm:block">Fine diamond jewellery</span>
         </div>
       </header>
+
+      {/* 100% Indriya Certified strip */}
+      <div className="border-b border-border bg-card/40">
+        <div className="mx-auto flex max-w-6xl items-center justify-center gap-2 px-5 py-2.5">
+          <ShieldCheck className="size-4 text-rosegold" aria-hidden />
+          <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-wine">
+            100% Indriya Certified
+          </span>
+        </div>
+      </div>
 
       <section className="mx-auto grid max-w-6xl gap-10 px-5 py-10 lg:grid-cols-[1.05fr_1fr] lg:gap-14 lg:py-16">
         <ProductGallery images={IMAGES} />
@@ -229,12 +244,15 @@ function ProductPage() {
         {/* INTRO PARAGRAPH - Keywords in first 100 words */}
         <div className="mb-10">
           <p className="text-[15px] leading-[1.8] text-muted-foreground">
-            The Regal Bloom is a contemporary 18K pink gold diamond pendant designed for those seeking
-            everyday elegance. Crafted with SI–FG natural diamonds and meticulous detail, this
-            pendant marries traditional Indian jewellery aesthetics with modern minimalism. At 6.527 g,
-            it sits light on the collarbone while maintaining the presence and sparkle expected from
-            a fine diamond piece. Whether you're seeking a 18K gold pendant for daily wear or a
-            statement piece for special occasions, the Regal Bloom delivers both grace and durability.
+            The Regal Bloom is a refined Diamond Pendant in 18 karat pink gold, designed for those
+            seeking everyday elegance with lasting value. As a rose gold diamond pendant, it pairs
+            the warmth of pink gold with brilliant SI–FG natural diamonds. Crafted with meticulous
+            detail at 6.527 g, this floral diamond pendant sits lightly on the collarbone while
+            carrying the presence expected from a fine Diamond pendant gold piece. Whether you want
+            a daily wear diamond pendant or a statement jewel, the Regal Bloom answers both. If you
+            are exploring Rose gold jewellery designs, this modern diamond pendant shows how Indian
+            motifs can be expressed through clean, contemporary lines. A graceful 18k gold pendant
+            and a trusted gold pendant choice, it moves effortlessly from work to occasion dressing.
           </p>
         </div>
 
