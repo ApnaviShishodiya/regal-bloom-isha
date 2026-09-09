@@ -19,7 +19,7 @@ const META_TITLE = "18K Pink Gold Diamond Pendant | Regal Bloom by Indriya";
 const META_DESCRIPTION =
   "Discover the Regal Bloom, an 18K pink gold diamond pendant with SI–FG natural diamonds. Everyday-elegant design at ₹2,82,758.";
 const URL_SLUG = "/jewellery-pendants/regal-bloom-diamond-pendant-18k-pink-gold";
-const CANONICAL = "https://www.regal-bloom-isha.com/jewellery-pendants/regal-bloom-diamond-pendant-18k-pink-gold";
+const CANONICAL = "https://regal-bloom-isha.lovable.app/jewellery-pendants/regal-bloom-diamond-pendant-18k-pink-gold";
 const HERO_IMAGE =
   "https://s7ap1.scene7.com/is/image/noveljewelsprod/DEARA40-APPL070?fmt=webp&wid=1400";
 
@@ -59,7 +59,11 @@ export const Route = createFileRoute("/jewellery-pendants/regal-bloom-diamond-pe
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: HERO_IMAGE },
       { name: "robots", content: "index, follow" },
-      { name: "keywords", content: "18K pink gold diamond pendant, diamond pendant, rose gold pendant, fine jewellery" },
+      {
+        name: "keywords",
+        content:
+          "Diamond Pendant, Diamond pendant gold, rose gold diamond pendant, floral diamond pendant, modern diamond pendant, daily wear diamond pendant, gold pendant, 18k gold pendant, Rose gold jewellery designs",
+      },
     ],
     links: [{ rel: "canonical", href: CANONICAL }],
     scripts: [
@@ -140,12 +144,12 @@ function ProductPage() {
     <main className="min-h-screen bg-background">
       <header className="border-b border-border/70 bg-card/60 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-          <a href="/" aria-label="Indriya home" className="inline-flex items-center">
+          <a href="https://www.indriya.com/" aria-label="Indriya home" className="inline-flex items-center">
             <img
-              src={indriyaLogo}
+              src={INDRIYA_LOGO_URL}
               alt="Indriya fine jewellery logo"
-              width="120"
-              height="60"
+              width="160"
+              height="80"
               className="h-8 w-auto sm:h-10"
               loading="eager"
             />
@@ -153,6 +157,16 @@ function ProductPage() {
           <span className="eyebrow hidden sm:block">Fine diamond jewellery</span>
         </div>
       </header>
+
+      {/* 100% Indriya Certified strip */}
+      <div className="border-b border-border bg-card/40">
+        <div className="mx-auto flex max-w-6xl items-center justify-center gap-2 px-5 py-2.5">
+          <ShieldCheck className="size-4 text-rosegold" aria-hidden />
+          <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-wine">
+            100% Indriya Certified
+          </span>
+        </div>
+      </div>
 
       <section className="mx-auto grid max-w-6xl gap-10 px-5 py-10 lg:grid-cols-[1.05fr_1fr] lg:gap-14 lg:py-16">
         <ProductGallery images={IMAGES} />
