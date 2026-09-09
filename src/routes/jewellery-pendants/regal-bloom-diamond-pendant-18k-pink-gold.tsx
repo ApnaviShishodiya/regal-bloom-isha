@@ -1,16 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { BadgeCheck, IndianRupee, Repeat, Sparkles } from "lucide-react";
+import { BadgeCheck, IndianRupee, Repeat, ShieldCheck, Sparkles } from "lucide-react";
 
 import { ProductGallery, type GalleryImage } from "@/components/ProductGallery";
 import { GoldTracker } from "@/components/GoldTracker";
 import { Button } from "@/components/ui/button";
-import indriyaLogo from "@/assets/indriya-logo.png";
 
 const COLLECTION_URL = "https://www.indriya.com/jewellery/pendants";
 const DIAMOND_PENDANTS_URL = "https://www.indriya.com/jewellery/diamond-pendants";
 const ROSE_GOLD_URL = "https://www.indriya.com/jewellery/rose-gold-jewellery";
 const STORE_URL = "https://www.indriya.com/jewellery-stores";
 const GOLD_RATE_URL = "https://www.indriya.com/gold-rate-today";
+const INDRIYA_LOGO_URL =
+  "https://s7ap1.scene7.com/is/content/noveljewelsprod/Indriya-Logo?fmt=webp-alpha&fit=wrap&dpr=off";
 
 // SEO Configuration
 const PRIMARY_KEYWORD = "18k pink gold diamond pendant";
