@@ -72,19 +72,36 @@ export const Route = createFileRoute("/jewellery-pendants/regal-bloom-diamond-pe
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
+          "@id": `${CANONICAL}#product`,
           name: "Regal Bloom: 18K Pink Gold Diamond Pendant",
           sku: "DEARA40-APPL070",
           brand: { "@type": "Brand", name: "Indriya" },
+          category: "Pendants",
+          color: "Pink gold",
+          url: CANONICAL,
           description: META_DESCRIPTION,
           image: IMAGES.map((image) => image.src),
           material: "18 karat pink gold",
           weight: { "@type": "QuantitativeValue", value: 6.527, unitCode: "GRM" },
           offers: {
             "@type": "Offer",
+            url: CANONICAL,
             price: 282758,
             priceCurrency: "INR",
+            itemCondition: "https://schema.org/NewCondition",
             availability: "https://schema.org/InStock",
+            seller: { "@type": "Organization", name: "Indriya" },
           },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Indriya",
+          url: "https://www.indriya.com/",
+          logo: INDRIYA_LOGO_URL,
         }),
       },
       {
@@ -144,7 +161,7 @@ const FAQS = [
   },
   {
     q: "Is diamond costlier than gold?",
-    a: "Per gram, fine diamonds generally cost more than gold, but the comparison depends on quality. Gold is priced by purity and weight, while a diamond's worth rests on the four Cs — cut, colour, clarity and carat. Certified natural diamonds, like the SI–FG stones in the Regal Bloom, hold documented quality that protects their lasting value.",
+    a: "Per gram, fine diamonds generally cost more than gold, but the comparison depends on quality. Gold is priced by purity and weight, while a diamond's worth rests on the four Cs: cut, colour, clarity and carat. Certified natural diamonds, like the SI–FG stones in the Regal Bloom, hold documented quality that protects their lasting value.",
   },
   {
     q: "Can diamonds be set in 22K gold?",
@@ -152,7 +169,7 @@ const FAQS = [
   },
   {
     q: "Which diamond is best for daily wear?",
-    a: "For daily wear, choose a diamond with good clarity and colour — grades in the SI–FG range balance brilliance with value — set in a secure, well-protected setting. The Regal Bloom's SI–FG natural diamonds are pavé-set in resilient 18K pink gold and softly scaled, so it moves effortlessly from work to occasion.",
+    a: "For daily wear, choose a diamond with good clarity and colour; grades in the SI–FG range balance brilliance with value, and a secure, well-protected setting keeps the stones safe. The Regal Bloom's SI–FG natural diamonds are pavé-set in resilient 18K pink gold and softly scaled, so it moves effortlessly from work to occasion.",
   },
 ];
 
