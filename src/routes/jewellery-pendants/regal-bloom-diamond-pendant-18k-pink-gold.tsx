@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { BadgeCheck, IndianRupee, Repeat, ShieldCheck, Sparkles } from "lucide-react";
+import { BadgeCheck, IndianRupee, Plus, Repeat, ShieldCheck, Sparkles } from "lucide-react";
 
 import { ProductGallery, type GalleryImage } from "@/components/ProductGallery";
 import { GoldTracker } from "@/components/GoldTracker";
