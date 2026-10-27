@@ -355,6 +355,29 @@ function ProductPage() {
         </div>
       </section>
 
+      {/* FAQ SECTION */}
+      <section className="mx-auto max-w-3xl px-5 py-14 lg:py-20" aria-labelledby="faq-heading">
+        <h2 id="faq-heading" className="font-display text-2xl leading-tight text-wine sm:text-3xl">
+          Frequently asked questions
+        </h2>
+        <div className="rule-gold mt-4 w-24" />
+        <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">
+          Everything you may want to know before choosing a diamond pendant — answered by our
+          jewellery experts.
+        </p>
+        <div className="mt-8 divide-y divide-border overflow-hidden rounded-xl border border-border bg-card shadow-soft">
+          {FAQS.map((faq) => (
+            <details key={faq.q} className="group">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-[15px] font-medium text-wine transition-colors hover:bg-accent/60 [&::-webkit-details-marker]:hidden">
+                {faq.q}
+                <Plus className="size-4 shrink-0 text-rosegold transition-transform duration-200 group-open:rotate-45" aria-hidden />
+              </summary>
+              <p className="px-5 pb-5 text-sm leading-relaxed text-muted-foreground">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
       {/* CALL-TO-ACTION SECTION */}
       <section className="border-t border-border bg-wine">
         <div className="mx-auto flex max-w-6xl flex-col items-start gap-6 px-5 py-14 sm:flex-row sm:items-center sm:justify-between">
