@@ -109,6 +109,18 @@ export const Route = createFileRoute("/jewellery-pendants/regal-bloom-diamond-pe
           ],
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQS.map((faq) => ({
+            "@type": "Question",
+            name: faq.q,
+            acceptedAnswer: { "@type": "Answer", text: faq.a },
+          })),
+        }),
+      },
     ],
   }),
   component: ProductPage,
@@ -119,6 +131,29 @@ const SPECS = [
   { label: "Metal", value: "18 karat pink gold" },
   { label: "Diamonds", value: "SI–FG natural diamonds" },
   { label: "Gross weight", value: "6.527 g" },
+];
+
+const FAQS = [
+  {
+    q: "How much will a diamond pendant cost?",
+    a: "The price of a diamond pendant depends on the carat weight and quality of its diamonds, the weight and purity of the gold, and the craftsmanship involved. Everyday designs begin at approachable prices, while statement pieces rise with diamond size. The Regal Bloom is priced at approximately ₹2,82,758 (excluding taxes), with the metal rate, diamond value and making charges itemised before you pay.",
+  },
+  {
+    q: "How much is a 1 carat diamond pendant?",
+    a: "A 1 carat diamond pendant can range widely in price because a carat describes weight, not quality alone. Cut, clarity and colour shape the value of the stone, and the weight of gold in the setting adds to it. Our boutique experts can walk you through 1 carat options across designs, with transparent pricing at every step.",
+  },
+  {
+    q: "Is diamond costlier than gold?",
+    a: "Per gram, fine diamonds generally cost more than gold, but the comparison depends on quality. Gold is priced by purity and weight, while a diamond's worth rests on the four Cs — cut, colour, clarity and carat. Certified natural diamonds, like the SI–FG stones in the Regal Bloom, hold documented quality that protects their lasting value.",
+  },
+  {
+    q: "Can diamonds be set in 22K gold?",
+    a: "Technically yes, but it is rarely recommended. 22K gold is soft, so it does not hold prongs and settings securely over years of wear, which puts the stones at risk. That is why fine diamond jewellery — including every Indriya diamond pendant — is crafted in durable 18K gold, which keeps diamonds safe while offering a rich, lasting finish.",
+  },
+  {
+    q: "Which diamond is best for daily wear?",
+    a: "For daily wear, choose a diamond with good clarity and colour — grades in the SI–FG range balance brilliance with value — set in a secure, well-protected setting. The Regal Bloom's SI–FG natural diamonds are pavé-set in resilient 18K pink gold and softly scaled, so it moves effortlessly from work to occasion.",
+  },
 ];
 
 const PROMISES = [
