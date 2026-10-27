@@ -165,7 +165,7 @@ const FAQS = [
   },
   {
     q: "Can diamonds be set in 22K gold?",
-    a: "Technically yes, but it is rarely recommended. 22K gold is soft, so it does not hold prongs and settings securely over years of wear, which puts the stones at risk. That is why fine diamond jewellery — including every Indriya diamond pendant — is crafted in durable 18K gold, which keeps diamonds safe while offering a rich, lasting finish.",
+    a: "Technically yes, but it is rarely recommended. 22K gold is soft, so it does not hold prongs and settings securely over years of wear, which puts the stones at risk. That is why fine diamond jewellery, including every Indriya diamond pendant, is crafted in durable 18K gold, which keeps diamonds safe while offering a rich, lasting finish.",
   },
   {
     q: "Which diamond is best for daily wear?",
@@ -379,7 +379,7 @@ function ProductPage() {
         </h2>
         <div className="rule-gold mt-4 w-24" />
         <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">
-          Everything you may want to know before choosing a diamond pendant — answered by our
+          Everything you may want to know before choosing a diamond pendant, answered by our
           jewellery experts.
         </p>
         <div className="mt-8 divide-y divide-border overflow-hidden rounded-xl border border-border bg-card shadow-soft">
