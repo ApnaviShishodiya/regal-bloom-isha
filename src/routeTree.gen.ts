@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as JewelleryCareGuideRouteImport } from './routes/jewellery-care-guide'
 import { Route as JewelleryStoresRouteImport } from './routes/jewellery-stores'
 import { Route as RegalBloomDiamondPendantIshaRouteImport } from './routes/regal-bloom-diamond-pendant-isha'
 import { Route as ApiGoldRateRouteImport } from './routes/api/gold-rate'
@@ -20,6 +21,11 @@ import { Route as JewelleryRoseGoldJewelleryRouteImport } from './routes/jewelle
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JewelleryCareGuideRoute = JewelleryCareGuideRouteImport.update({
+  id: '/jewellery-care-guide',
+  path: '/jewellery-care-guide',
   getParentRoute: () => rootRouteImport,
 } as any)
 const JewelleryStoresRoute = JewelleryStoresRouteImport.update({
@@ -58,6 +64,7 @@ const JewelleryRoseGoldJewelleryRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/jewellery-care-guide': typeof JewelleryCareGuideRoute
   '/jewellery-stores': typeof JewelleryStoresRoute
   '/regal-bloom-diamond-pendant-isha': typeof RegalBloomDiamondPendantIshaRoute
   '/api/gold-rate': typeof ApiGoldRateRoute
@@ -67,6 +74,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/jewellery-care-guide': typeof JewelleryCareGuideRoute
   '/jewellery-stores': typeof JewelleryStoresRoute
   '/regal-bloom-diamond-pendant-isha': typeof RegalBloomDiamondPendantIshaRoute
   '/api/gold-rate': typeof ApiGoldRateRoute
@@ -77,6 +85,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/jewellery-care-guide': typeof JewelleryCareGuideRoute
   '/jewellery-stores': typeof JewelleryStoresRoute
   '/regal-bloom-diamond-pendant-isha': typeof RegalBloomDiamondPendantIshaRoute
   '/api/gold-rate': typeof ApiGoldRateRoute
@@ -88,6 +97,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/jewellery-care-guide'
     | '/jewellery-stores'
     | '/regal-bloom-diamond-pendant-isha'
     | '/api/gold-rate'
@@ -97,6 +107,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/jewellery-care-guide'
     | '/jewellery-stores'
     | '/regal-bloom-diamond-pendant-isha'
     | '/api/gold-rate'
@@ -106,6 +117,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/jewellery-care-guide'
     | '/jewellery-stores'
     | '/regal-bloom-diamond-pendant-isha'
     | '/api/gold-rate'
@@ -116,6 +128,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  JewelleryCareGuideRoute: typeof JewelleryCareGuideRoute
   JewelleryStoresRoute: typeof JewelleryStoresRoute
   RegalBloomDiamondPendantIshaRoute: typeof RegalBloomDiamondPendantIshaRoute
   ApiGoldRateRoute: typeof ApiGoldRateRoute
@@ -131,6 +144,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jewellery-care-guide': {
+      id: '/jewellery-care-guide'
+      path: '/jewellery-care-guide'
+      fullPath: '/jewellery-care-guide'
+      preLoaderRoute: typeof JewelleryCareGuideRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/jewellery-stores': {
@@ -180,6 +200,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  JewelleryCareGuideRoute: JewelleryCareGuideRoute,
   JewelleryStoresRoute: JewelleryStoresRoute,
   RegalBloomDiamondPendantIshaRoute: RegalBloomDiamondPendantIshaRoute,
   ApiGoldRateRoute: ApiGoldRateRoute,
