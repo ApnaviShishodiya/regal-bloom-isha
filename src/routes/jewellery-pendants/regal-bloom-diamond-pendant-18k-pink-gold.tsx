@@ -366,7 +366,14 @@ function ProductPage() {
             exchange and buyback at prevailing rates, ensuring your piece stays as liquid value, not
             a locked purchase. The approximate price of ₹2,82,758 (excluding taxes) reflects
             today's confirmed gold rate, which you can verify on our Gold Tracker before deciding.
-            Book an appointment at your nearest Indriya boutique to try the Regal Bloom and consult
+            To keep it luminous for years, follow the everyday habits in our{" "}
+            <Link
+              to="/jewellery-care-guide"
+              className="text-rosegold underline underline-offset-2 hover:text-wine"
+            >
+              Jewellery Care Guide
+            </Link>
+            . Book an appointment at your nearest Indriya boutique to try the Regal Bloom and consult
             our jewellery experts about sizing, styling, and care.
           </p>
         </div>
